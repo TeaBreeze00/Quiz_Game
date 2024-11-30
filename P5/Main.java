@@ -14,21 +14,16 @@ import P4.Game;
 //	 Aim:
 //	 	- Build more complex programs that involves the use of 2-D arrays
 //
-//	 REQ (for bonus marks):
-//	 You should build on your code from part P4 and satisfy the following requirements:
-//	   1.  Create three categories of questions in a 2D array (rows=categories, col=questions). 
-//	       in each player's turn, ask the player about the required category and then ask a question from that category.
-//	       make all necessary changes to your program (e.g. shuffle method should now work for 2D array)
-//	   2.  If we are out of questions in a category (i.e., all questions in this category were offered and answered correctly), inform the player to choose another category.
+
 
 public class Main {				
 	static Game game;			
 	
 	//Two arrays for questions and answers (both are global, i.e., accessible by all code in the class).
 	//Replace array values with real questions/answers
-	static String[][] questions = {/*Animal*/{"How many noses does a slug have?", "Name a mammal that canít jump.", "What is the fastest land animal?", "What is the fastest aquatic animal?", "What was the lifespan of a Tyrannosaurus Rex?", "What is the sweet food made by bees?", "Which mammal lives the longest?", "On a common ladybug, what color are its spots?", "How many legs does a lobster have?"},
-	                                /*General*/{"What does ìwwwî stand for in a website browser?", "How long is an Olympic swimming pool (in meters)?", "Which country do cities of Perth, Adelade & Brisbane belong to?","What geometric shape is generally used for stop signs?", "What is \"cynophobia\"?", "What punctuation mark ends an imperative sentence?", "Who named the Pacific Ocean?", "How many languages are written from right to left?", "What is the name of the man who launched eBay back in 1995?"},
-	                                /*Movie*/{"What are the dying words of Charles Foster Kane in Citizen Kane?", " Who played Mrs. Robinson in The Graduate?", ": What was the first feature-length animated movie ever released?"," In The Matrix, does Neo take the blue pill or the red pill?", "For what movie did Tom Hanks score his first Academy Award nomination?", "What 1927 musical was the first ìtalkieî?", "Whatís the name of the skyscraper in Die Hard?", "What flavor of Pop Tarts does Buddy the Elf use in his spaghetti in Elf? ", "What pop vocal group performs at the wedding in Bridesmaids?"}};
+	static String[][] questions = {/*Animal*/{"How many noses does a slug have?", "Name a mammal that can‚Äôt jump.", "What is the fastest land animal?", "What is the fastest aquatic animal?", "What was the lifespan of a Tyrannosaurus Rex?", "What is the sweet food made by bees?", "Which mammal lives the longest?", "On a common ladybug, what color are its spots?", "How many legs does a lobster have?"},
+	                                /*General*/{"What does ‚Äúwww‚Äù stand for in a website browser?", "How long is an Olympic swimming pool (in meters)?", "Which country do cities of Perth, Adelade & Brisbane belong to?","What geometric shape is generally used for stop signs?", "What is \"cynophobia\"?", "What punctuation mark ends an imperative sentence?", "Who named the Pacific Ocean?", "How many languages are written from right to left?", "What is the name of the man who launched eBay back in 1995?"},
+	                                /*Movie*/{"What are the dying words of Charles Foster Kane in Citizen Kane?", " Who played Mrs. Robinson in The Graduate?", ": What was the first feature-length animated movie ever released?"," In The Matrix, does Neo take the blue pill or the red pill?", "For what movie did Tom Hanks score his first Academy Award nomination?", "What 1927 musical was the first ‚Äútalkie‚Äù?", "What‚Äôs the name of the skyscraper in Die Hard?", "What flavor of Pop Tarts does Buddy the Elf use in his spaghetti in Elf? ", "What pop vocal group performs at the wedding in Bridesmaids?"}};
 	static String[][] answers =   {/**/{"Four",   "Elephant",   "Cheetah",   "sailfish",   "20",   "Honey",   "Whale",   "Black",   "10"},
 			                       /**/{"World Wide Web", "50", "Australia","Octagon", "Fear of dogs", "exclamation point", "Ferdinand Magellan", "12", "Pierre Omidyar"},
 			                       /**/{"Rosebud", "Anne Bancroft", "Snow White and the Seven Dwarfs","Red", "Big", "The Jazz Singer", "Nakatomi Plaza", "Chocolate", "Wilson Phillips"}};
@@ -48,15 +43,9 @@ public class Main {
 				game.addPlayer(name);				
 			}
 			
-			//REQ2:	Call a method to shuffle questions and answers. For that, you need to create a method with the header: void shuffleQuestions();
+
 			shuffleQuestions(questions, answers);
 			
-			//REQ3:	- Calculate the maximum number of rounds (each player is asked one question per round). The maximum number of rounds should be equal to the number of available questions divided by numPlayers. Store this value in a variable maxRounds
-			//	- Ask the user about the number of rounds. The value read from the user should not exceed maxRounds. Store this value in a variable numRounds.
-			//		- Ask each player the next unanswered question (e.g., player 0 gets the first question. If it is answered correctly, then player1 gets the next question in the array, otherwise player1 gets the same question again, and so on). 
-			// 		  Assume that an incorrectly answered question will keep popping up until it is correctly answered or we finish all the rounds.
-			//		  Hint: you need to create a for loop that repeats the below code block numRounds times.
-			//		  Hint: you need to have a variable that keeps track of the next question to be offered.
 			
 			int maxRounds = questions[0].length/numPlayers;
 			int numRounds = game.askForInt("How many rounds?(each payer gets one question per round)", 1, maxRounds);
