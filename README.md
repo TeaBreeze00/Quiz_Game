@@ -1,4 +1,4 @@
-# Quiz Game Java Program
+# Brain Buster Java Program
 
 ## Overview
 
