@@ -36,30 +36,6 @@ javac QuizGame.java
 java QuizGame
 ```
 
-### Sample Output
-
-```
-Welcome to the Quiz Game!
-Enter the number of players: 2
-Enter name for player 1: Alice
-Enter name for player 2: Bob
-
-Alice, it's your turn.
-Question: What is the capital of France?
-Answer: Paris
-Correct! You earn 1 point.
-
-Bob, it's your turn.
-Question: What is the largest planet in our solar system?
-Answer: Jupiter
-Correct! You earn 1 point.
-
-Final Scores:
-Alice: 1
-Bob: 1
-It's a tie!
-```
-
 ## Customization
 
 - **Adding Questions**: Modify the `Question` class to add more questions to the quiz.
